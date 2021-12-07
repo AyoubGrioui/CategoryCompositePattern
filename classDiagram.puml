@@ -1,0 +1,17 @@
+@startuml
+interface IComponent{
+String view()
+}
+class Category{
+List<IComponent> children
+String view()
+void add(IComponent component)
+void deleteCategory(Category category)
+}
+class Product{
+String view()
+}
+IComponent <.. Category
+IComponent <.. Product
+Category o-- "0..*" IComponent
+@enduml
